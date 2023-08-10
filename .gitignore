@@ -1,0 +1,11 @@
+# NPM related
+node_modules/
+
+# Build related
+dist/
+
+# Environment related
+.env
+
+# OS related
+.DS_Store
