@@ -1,0 +1,36 @@
+@startuml
+
+actor user [
+ user (web browser)
+]
+
+cloud Netlify {
+  component Odraw_frontend [
+    Odraw frontend
+  ]
+}
+
+cloud Heroku {
+  node dyno {
+    component Odraw_backend [
+      Odraw backend
+    ]
+  }
+}
+
+cloud MongoAtlas {
+  database Odraw_cluster [
+    Odraw cluster server
+    ....
+    ....
+    - odraw database
+  ]
+}
+
+user -ri- Odraw_frontend : " HTTP "
+Odraw_frontend -ri- Odraw_backend : ""          Websocket           ""
+Odraw_frontend -ri(0- Odraw_backend : ""       API REST       ""
+Odraw_backend -ri- Odraw_cluster : ""         MongoDB Wire Protocol     ""
+
+
+@enduml
