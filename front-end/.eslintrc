@@ -1,0 +1,24 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/vue3-essential",
+    "@vue/typescript/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+  "rules": {
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "no-multi-spaces": "error",
+    "no-trailing-spaces": "error",
+    "vue/script-indent": ["error", 2, { "baseIndent": 1 }],
+    "vue/multi-word-component-names": "off"
+  },
+  "ignorePatterns": ["dist/**"]
+}
